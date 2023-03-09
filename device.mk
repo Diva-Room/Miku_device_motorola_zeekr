@@ -69,8 +69,6 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
     Tag
 
 # Permissions
