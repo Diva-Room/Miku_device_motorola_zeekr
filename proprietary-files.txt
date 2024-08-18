@@ -18,6 +18,15 @@ vendor/lib/rfsa/adsp/capi_elus_rx.so
 vendor/lib/rfsa/adsp/capi_elus_tx.so
 vendor/lib/rfsa/adsp/libhme_dsp_skel.so
 
+# Audio
+vendor/etc/aualgo/ainr_tfv2.dat
+vendor/etc/aualgo/aualgo_ainr.conf
+vendor/etc/aualgo/aualgo_sst.conf
+vendor/lib64/libaualgo_ainr_component.so;DISABLE_CHECKELF
+vendor/lib64/libaualgo_ainr_wrapper.so
+vendor/lib64/libaualgo_sst_component.so
+vendor/lib64/libext_tflite_c.so
+
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
 vendor/etc/init/vendor.qti.camera.provider@2.7-service_64.rc
