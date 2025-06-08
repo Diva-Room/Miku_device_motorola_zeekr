@@ -491,6 +491,11 @@
                 <priority>1</priority>
                 <samplerate>96000</samplerate>
             </usecase>
+            <usecase>
+                <name>PAL_STREAM_PCM_OFFLOAD</name>
+                <priority>4</priority>
+                <samplerate>48000</samplerate>
+            </usecase>
         </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_HANDSET</id>
