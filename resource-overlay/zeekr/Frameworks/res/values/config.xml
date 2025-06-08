@@ -182,7 +182,7 @@
         @left
     </string>
 
-    <bool name="config_maskSecondaryBuiltInDisplayCutout">true</bool>
+    <bool name="config_maskSecondaryBuiltInDisplayCutout">false</bool>
 
     <integer-array name="config_secondaryBuiltInDisplayCutoutSideOverride">
         <item>3</item>
