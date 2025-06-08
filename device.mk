@@ -60,6 +60,10 @@ PRODUCT_PACKAGES += \
 
 # Fold related configs
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_cape/android.hardware.sensor.hifi_sensors.xml \
+    frameworks/native/data/etc/android.hardware.sensor.hinge_angle.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_cape/android.hardware.sensor.hinge_angle.xml
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fold/device_state_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/devicestate/device_state_configuration.xml \
     $(LOCAL_PATH)/fold/display_id_4630947043778501762.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947043778501762.xml \
     $(LOCAL_PATH)/fold/display_id_4630947043778501763.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947043778501763.xml \
