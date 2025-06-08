@@ -285,6 +285,7 @@ vendor/lib64/com.qti.feature2.serializer.so
 vendor/lib64/com.qti.feature2.statsregeneration.so
 vendor/lib64/com.qti.feature2.stub.so
 vendor/lib64/com.qti.feature2.swmf.so
+vendor/lib64/com.qti.feature2.swmfsr.so
 
 # Camera - OIS
 vendor/firmware/mot_dw9784.prog
