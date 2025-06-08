@@ -2090,6 +2090,10 @@
         <ctl name="WSA_RX0 Digital Volume" value="84" />
     </path>
 
+    <path name="voice-screen-call">
+        <path name="handset" />
+    </path>
+
     <path name="handset-mic">
         <path name="dmic1" />
     </path>
@@ -2354,7 +2358,7 @@
     <path name="va-mic-mono">
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
-        <ctl name="VA DMIC MUX0" value="DMIC1" />
+        <ctl name="VA DMIC MUX0" value="DMIC5" />
     </path>
 
     <path name="va-mic-dmic">
@@ -2401,7 +2405,7 @@
         <ctl name="LPI Enable" value="1" />
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
-        <ctl name="VA DMIC MUX0" value="DMIC3" />
+        <ctl name="VA DMIC MUX0" value="DMIC5" />
     </path>
 
     <path name="va-mic-dmic-lpi">
@@ -2609,6 +2613,13 @@
 
     <path name="handset-tmic">
         <path name="three-mic" />
+    </path>
+
+    <path name="screen-call-tmic">
+        <path name="handset-tmic" />
+        <ctl name="TX_DEC1 Volume" value="16" />
+        <ctl name="TX_DEC2 Volume" value="16" />
+        <ctl name="TX_DEC3 Volume" value="16" />
     </path>
 
     <path name="voice-speaker-tmic">

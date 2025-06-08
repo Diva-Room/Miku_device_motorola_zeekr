@@ -143,6 +143,18 @@
                     <channels>1</channels>
                     <snd_device_name>screen-record-mic</snd_device_name>
                 </custom-config>
+                <custom-config key="mic1">
+                    <channels>1</channels>
+                    <snd_device_name>mic1</snd_device_name>
+                </custom-config>
+                <custom-config key="mic2">
+                    <channels>1</channels>
+                    <snd_device_name>mic2</snd_device_name>
+                </custom-config>
+                <custom-config key="mic3">
+                    <channels>1</channels>
+                    <snd_device_name>mic3</snd_device_name>
+                </custom-config>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOIP_TX</name>
@@ -159,6 +171,10 @@
                 <bit_width>16</bit_width>
                 <channels>3</channels>
                 <snd_device_name>handset-tmic</snd_device_name>
+                <ec_enable>1</ec_enable>
+                <custom-config key="screen-call">
+                    <snd_device_name>screen-call-tmic</snd_device_name>
+                </custom-config>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_ULTRA_LOW_LATENCY</name>
@@ -186,6 +202,7 @@
                 <id>PAL_DEVICE_OUT_HANDSET</id>
                 <id>PAL_DEVICE_OUT_SPEAKER</id>
                 <id>PAL_DEVICE_OUT_USB_HEADSET</id>
+                <id>PAL_DEVICE_OUT_HEARING_AID</id>
             </ec_rx_device>
         </in-device>
         <in-device>
@@ -474,11 +491,6 @@
                 <priority>1</priority>
                 <samplerate>96000</samplerate>
             </usecase>
-            <usecase>
-                <name>PAL_STREAM_PCM_OFFLOAD</name>
-                <priority>4</priority>
-                <samplerate>48000</samplerate>
-            </usecase>
         </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_HANDSET</id>
@@ -496,6 +508,9 @@
               <name>PAL_STREAM_VOICE_CALL</name>
               <priority>2</priority>
               <snd_device_name>voice-handset</snd_device_name>
+              <custom-config key="screen-call">
+                  <snd_device_name>voice-screen-call</snd_device_name>
+              </custom-config>
               <custom-config key="HAC">
                  <snd_device_name>voice-handset-hac</snd_device_name> <!-- override sound device name with HAC handset -->
               </custom-config>
@@ -1151,9 +1166,9 @@
             <param client_capture_read_delay="2000" /> <!-- reserved buffer duration for rt data -->
             <param pre_roll_duration="500" /> <!-- Default preroll duration -->
             <operating_modes>
-                <low_power capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFNS"/>
-                <high_performance capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS"/>
-                <high_performance_and_charging capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS"/>
+                <low_power capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFNS"/>
+                <high_performance capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS"/>
+                <high_performance_and_charging capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS"/>
             </operating_modes>
             <arm_ss_usecase>
                 <!-- Options are "KEYWORD_DETECTION", "USER_VERIFICATION", "CUSTOM_DETECTION"  -->
