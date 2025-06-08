@@ -407,4 +407,7 @@
          TODO(b/236022708) Move rear display state to device state config file
     -->
     <integer name="config_deviceStateRearDisplay">3</integer>
+
+    <!-- Whether to show Fold lock behavior setting feature in Settings App -->
+    <bool name="config_fold_lock_behavior">true</bool>
 </resources>
