@@ -24,7 +24,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 $(call inherit-product, device/motorola/zeekr/device.mk)
 
 # Inherit from Gapps
+ifeq ($(WITH_GMS),true)
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
