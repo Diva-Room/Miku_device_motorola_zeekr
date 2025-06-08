@@ -11,6 +11,7 @@ on fs
 	insmod /vendor/lib/modules/sensors_class.ko
 	insmod /vendor/lib/modules/touchscreen_mmi.ko
 	insmod /vendor/lib/modules/fpc1020_mmi.ko
+	insmod /vendor/lib/modules/stmicro_mmi.ko
 	insmod /vendor/lib/modules/goodix_brl_mmi.ko
 	insmod /vendor/lib/modules/focaltech_v3.ko
 	insmod /vendor/lib/modules/sx937x_multi.ko
@@ -18,6 +19,9 @@ on fs
 	insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
         #zram wb
 	mount_all /vendor/etc/fstab.qcom.zram --early
+	#Use dirty bytes instead of dirty ratio
+        write /proc/sys/vm/dirty_background_bytes 26214400
+        write /proc/sys/vm/dirty_bytes 104857600
 
 # Enable debugfs on factory build
 on fs && property:ro.vendor.build.motfactory=1
@@ -49,8 +53,11 @@ on early-boot
     mkdir /data/vendor/wlc 0775 vendor_tcmd system
 
 # add permission als_comp_multi_cal_raw
+    chmod 0775  /mnt/vendor/persist/sensors
     chown system system /mnt/vendor/persist/sensors/als_comp_multi_cal_raw
     chmod 0664 /mnt/vendor/persist/sensors/als_comp_multi_cal_raw
+    chown system system /mnt/vendor/persist/sensors/als_mpc_rawdata
+    chmod 0664 /mnt/vendor/persist/sensors/als_mpc_rawdata
 
 on post-fs-data
     # Param updater data for various modules
@@ -238,6 +245,12 @@ on property:ro.bootmode=mot-factory
     chown vendor_tcmd system /sys/module/mmi_charger/parameters/factory_kill_disable
     chmod 0660 /sys/module/mmi_charger/parameters/factory_kill_disable
 
+on property:ro.carrier="tmo"
+    setprop persist.vendor.audio.usecase_xml.extend tmo
+
+on property:ro.carrier="unknown"
+    setprop persist.vendor.audio.usecase_xml.extend unknown
+
 on property:ro.product.is_prc=true
     setprop persist.vendor.audio.cal_path.extend retcn
 
@@ -259,6 +272,23 @@ on property:vendor.usb.headset_reset=0
 
 on early-boot
     write /sys/kernel/cnss/recovery 1
+    
+
+on property:sys.boot_completed=1 && property:ro.vendor.build.motfactory=1
+    wait /sys/class/drm/card0-DSI-1/panelPcdCheck
+    chmod 0666 /sys/class/drm/card0-DSI-1/panelPcdCheck
+
+on property:sys.usb.current_limit=1
+    write /sys/class/power_supply/battery/device/force_charger_suspend 1
+
+on property:sys.usb.current_limit=0
+    write /sys/class/power_supply/battery/device/force_charger_suspend 0
+
+on property:sys.usb.accessory_current_limit=1
+    write /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl 1000
+
+on property:sys.usb.accessory_current_limit=0
+    write /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl 0
 
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
