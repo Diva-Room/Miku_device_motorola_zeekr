@@ -95,10 +95,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_dn/unavail.android.hardware.sensor.barometer.xml \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_n/unavail.android.hardware.sensor.barometer.xml \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ne/unavail.android.hardware.sensor.barometer.xml
-    
-# Properties
-include $(LOCAL_PATH)/product_prop.mk
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
