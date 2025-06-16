@@ -28,10 +28,13 @@ ifeq ($(WITH_GMS),true)
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 endif
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Maintainer
+MIKU_MASTER := AmeChan
 
-PRODUCT_NAME := lineage_zeekr
+# Inherit some common Miku UI stuff.
+$(call inherit-product, vendor/miku/build/product/miku_product.mk)
+
+PRODUCT_NAME := miku_zeekr
 PRODUCT_DEVICE := zeekr
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola

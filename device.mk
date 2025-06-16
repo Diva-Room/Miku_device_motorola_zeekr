@@ -34,7 +34,7 @@ $(call inherit-product, device/motorola/sm8475-common/sm8475.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-miku
 
 PRODUCT_PACKAGES += \
     DeviceApertureResZeekr \
