@@ -43,6 +43,6 @@ PRODUCT_MODEL := motorola razr 40 ultra
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct=zeekr_cn
+    DeviceProduct=zeekr_g
 
-BUILD_FINGERPRINT := motorola/zeekr_cn/msi:14/U3TZ34M.2-88-5/ec3a4e:user/release-keys
+BUILD_FINGERPRINT := motorola/zeekr_g/msi:15/V1TZS35M.41-21-3-6/1672c2:user/release-keys
