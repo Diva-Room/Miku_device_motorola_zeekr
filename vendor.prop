@@ -10,7 +10,7 @@ vendor.audio.max.temp=60.0
 persist.vendor.camera.physical.num=3
 
 # Motorola
-ro.mot.build.customerid=china
+ro.mot.build.customerid=global
 
 # Sensors
 ro.vendor.sensors.glance_approach=false
