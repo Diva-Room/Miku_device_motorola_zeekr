@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "Miku_device_motorola_sm8475-common",
+    "target_path": "device/motorola/sm8475-common",
+    "branch": "Blooming",
+    "remote": "diva"
+  },
+  {
+    "repository": "Miku_vendor_motorola_zeekr",
+    "target_path": "vendor/motorola/zeekr",
+    "branch": "Blooming",
+    "remote": "divalab-ssh"
+  }
+]
