@@ -9,6 +9,6 @@
     "repository": "Miku_vendor_motorola_zeekr",
     "target_path": "vendor/motorola/zeekr",
     "branch": "Blooming_v2",
-    "remote": "divalab-ssh"
+    "remote": "divalab"
   }
 ]
