@@ -17,6 +17,7 @@
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2640
 TARGET_SCREEN_WIDTH := 1080
+$(call soong_config_set_bool,bootanimation,multidisplay,true)
 
 # Screen
 TARGET_SCREEN_DENSITY := 420
